@@ -32,3 +32,14 @@ build/
 ### VS Code ###
 .vscode/
 .DS_Store
+service-users/.mvn/wrapper/maven-wrapper.jar
+
+backend-user/.mvn/wrapper/maven-wrapper.jar
+
+service-books/.mvn/wrapper/maven-wrapper.jar
+
+service-config/.mvn/wrapper/maven-wrapper.jar
+
+service-discovery/.mvn/wrapper/maven-wrapper.jar
+
+service-prices/.mvn/wrapper/maven-wrapper.jar
