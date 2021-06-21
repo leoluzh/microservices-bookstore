@@ -1,0 +1,43 @@
+
+server:
+  port: 8080
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: gateway
+
+spring:
+  application:
+    name: backend-user
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: service-books-id
+          uri: lb://service-books
+          predicates:
+            Path=/api/v1/books/**
+          filters:
+            - AuthFilter
+        - id: service-prices-id
+          uri: lb://service-prices
+          predicates:
+            Path=/api/v1/prices/**
+          filters:
+            - AuthFilter
+        - id: service-users-sign-in
+          uri: lb://service-users
+          predicates:
+            Path=/api/v1/users/signin/**
+
+eureka:
+  client:
+    service-url:
+      default-zone: http://localhost:8761/eureka
