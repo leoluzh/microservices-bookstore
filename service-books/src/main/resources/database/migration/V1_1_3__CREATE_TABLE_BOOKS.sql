@@ -1,0 +1,6 @@
+
+CREATE TABLE IF NOT EXISTS service_books.book (
+    ID BIGSERIAL PRIMARY KEY ,
+    TITLE TEXT NOT NULL ,
+    AUTHOR_ID BIGINT NOT NULL REFERENCES service_books.author(ID)
+);
