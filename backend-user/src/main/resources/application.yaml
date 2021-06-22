@@ -36,6 +36,8 @@ spring:
           uri: lb://service-users
           predicates:
             Path=/api/v1/users/signin/**
+  config:
+    import: "optional:configserver:"
 
 eureka:
   client:
