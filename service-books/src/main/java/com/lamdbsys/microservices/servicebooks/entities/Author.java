@@ -47,7 +47,7 @@ public class Author implements Serializable {
     @Column(name = "surname", nullable = false, length = 100)
     private String surname;
 
-
+    @Builder.Default
     @OneToMany(
             mappedBy = "author",
             cascade = CascadeType.ALL,
